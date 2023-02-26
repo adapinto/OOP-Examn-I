@@ -38,7 +38,7 @@ class Students:
                 e["nombre"]
                 , e["edad"]
                 , e["carrera"]
-                , e["cursos"]
+                , e["cursos "]
                 , e["_id"] 
             )
 

@@ -5,11 +5,11 @@ from dotenv import load_dotenv
 
 
 def main():
-    student, db = DbMongo.getDB()
+    db = DbMongo.getDB()
     pipeline = Dataprocess(DATA)
     
-    Students.insert_data(db)
-        
+    DbMongo.insert_data(db)
+    
     pipeline.create_careers()
     pipeline.create_students()
     pipeline.create_enrollments()
