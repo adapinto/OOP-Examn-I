@@ -1,6 +1,6 @@
 import pymongo
 import os
-from classes import DATA, Dataprocess,
+from classes import DATA, Dataprocess
 
 class DbMongo:
         
@@ -22,14 +22,4 @@ class DbMongo:
        student=pymongo.MongoClient(uri)
        db=student[os.environ['DB']]
        
-       
-       
-       
-       
        return student, db
-     
-     
-@staticmethod
-def insert_data(db):
-   collection=db.students
-   collection.insert_many(DATA)
