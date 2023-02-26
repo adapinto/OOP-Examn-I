@@ -1,4 +1,5 @@
 import pymongo
+from pymongo import MongoClient
 from classes import DATA, Dataprocess, Students, data,DbMongo
 from dotenv import load_dotenv
 

@@ -3,11 +3,13 @@ from classes import DATA, Dataprocess
 
 class Students:
     
-    def __init__(self,nombre,edad,carrera,id=""):
+    def __init__(self,nombre,edad,carrera,cursos,id=""):
         self.nombre=nombre
         self.edad=edad
         self.carrera=carrera
+        self.cursos=cursos
         self.__id=id
+        self.__collection="Estudiante"
         
     def save(self,db):
         collection=db[self.__collection]
@@ -34,7 +36,9 @@ class Students:
         for e in estudiantes:
             temp_estudiante = Students(
                 e["nombre"]
-                , e["telefono"]
+                , e["edad"]
+                , e["carrera"]
+                , e["cursos"]
                 , e["_id"] 
             )
 
@@ -49,5 +53,5 @@ class Students:
             
     @staticmethod
     def insert_data(db):
-        collection=db["students"]
+        collection=db.students
         collection.insert_many(DATA)
